@@ -18,5 +18,6 @@ public class app {
     tree.inOrderTraversal();
     tree.preOrderTraversal();
     tree.postOrderTraversal();
+    tree.breadthFirstTraversal();
   }
 }

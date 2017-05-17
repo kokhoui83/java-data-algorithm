@@ -1,5 +1,6 @@
 package mypackage;
 
+import java.util.*;
 import mypackage.Node;
 
 public class BinaryTree<T extends Comparable<T>> {
@@ -84,6 +85,31 @@ public class BinaryTree<T extends Comparable<T>> {
 
       // print currnet node
       System.out.println(focus);
+    }
+  }
+
+  public void breadthFirstTraversal () {
+    System.out.println("breadthFirstTraversal");
+    breadthFirstTraversal(this.root);
+  }
+
+  private void breadthFirstTraversal (Node<T> focus) {
+    if (focus != null) {
+      Queue<Node<T>> queue = new LinkedList<Node<T>>();
+      queue.add(focus);
+
+      while(queue.peek() != null) {
+        Node<T> node = queue.remove();
+        System.out.println(node);
+
+        if (node.getLeft() != null) {
+          queue.add(node.getLeft());
+        }
+
+        if (node.getRight() != null) {
+          queue.add(node.getRight());
+        }
+      }
     }
   }
 }
